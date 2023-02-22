@@ -1,8 +1,9 @@
 Comandos usados:
-git clone https://github.com/AngelDX/SisChampio...
-cd SisChampions2022
+git clone https://github.com/seijas1235/back-end.git
+cd back-end
 composer install
 Colocar credenciales de base de datos en archivo .env
-php artisan migrate --seed
-php artisan serve
+ejecutar comando php artisan key:generate
+ejecutar comando para creacion de base de datos php artisan migrate --seed
+ejecutar comando para levantar servidor php artisan serve
 
