@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\StudentsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(function () {
+
+
+    Route::group(["middleware" => "Auth.BasicApi"], function () {
+        Route::post('student', [StudentsController::class, 'create_user']);
+        Route::get('students/date-admission', [StudentsController::class, 'search_date']);
+        Route::get('students/card', [StudentsController::class, 'search_card']);
+        Route::get('students/grade', [StudentsController::class, 'search_grade']);
+        //Rutas
+
+    });
 });
