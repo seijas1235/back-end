@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "6a619279-4a2b-4529-9262-c8bd0d6fca65",
+		"name": "blautech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15180908"
+	},
+	"item": [
+		{
+			"name": "save student",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin@admin.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "card",
+							"value": "abc123",
+							"type": "text"
+						},
+						{
+							"key": "names",
+							"value": "juan",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "peres",
+							"type": "text"
+						},
+						{
+							"key": "birthdate",
+							"value": "1993-05-13",
+							"type": "text"
+						},
+						{
+							"key": "father_name",
+							"value": "juan perez",
+							"type": "text"
+						},
+						{
+							"key": "mother_name",
+							"value": "juana parez",
+							"type": "text"
+						},
+						{
+							"key": "grade",
+							"value": "tercero",
+							"type": "text"
+						},
+						{
+							"key": "section",
+							"value": "A",
+							"type": "text"
+						},
+						{
+							"key": "date_admission",
+							"value": "2023-01-31",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "pruebablautech.test/api/v1/student",
+					"host": [
+						"pruebablautech",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by admission date",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin@admin.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "pruebablautech.test/api/v1/students/date-admission?initial_date=2021-01-31&final_date=2023-10-31",
+					"host": [
+						"pruebablautech",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"students",
+						"date-admission"
+					],
+					"query": [
+						{
+							"key": "initial_date",
+							"value": "2021-01-31"
+						},
+						{
+							"key": "final_date",
+							"value": "2023-10-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by grade",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin@admin.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "pruebablautech.test/api/v1/students/grade?grade=tercero",
+					"host": [
+						"pruebablautech",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"students",
+						"grade"
+					],
+					"query": [
+						{
+							"key": "grade",
+							"value": "tercero"
+						},
+						{
+							"key": "final_date",
+							"value": "2023-10-31",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by card",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin@admin.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "pruebablautech.test/api/v1/students/card?card=abc123",
+					"host": [
+						"pruebablautech",
+						"test"
+					],
+					"path": [
+						"api",
+						"v1",
+						"students",
+						"card"
+					],
+					"query": [
+						{
+							"key": "card",
+							"value": "abc123"
+						},
+						{
+							"key": "final_date",
+							"value": "2023-10-31",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
